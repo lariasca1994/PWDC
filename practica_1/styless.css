@@ -1,0 +1,38 @@
+body {
+    background-color: #add8e6; /* Color azul pastel */
+    color: #000; /* Color de texto para contraste */
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: #87CEEB; /* Color azul claro para el menú */
+    padding: 10px;
+}
+
+nav button {
+    background-color: #4682b4; /* Color de botones */
+    color: #fff; /* Color de texto en botones */
+    padding: 8px 15px;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #87CEEB;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer li {
+    margin: 0 10px;
+}
