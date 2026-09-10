@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Felipe Arias - QA · Datos · Soporte y Monitoreo</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="contacto.html">Contacto</a>
+        <button type="button" id="alternar-tema" class="boton-tema"
+                aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema">🌓</button>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Luis Felipe Arias</h1>
+            <p class="tagline">Ingeniero de Sistemas — QA &amp; Testing · Análisis de Datos · Soporte y Monitoreo</p>
+        </section>
+
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>
+                Ingeniero de Sistemas egresado de la Universidad EAN, con
+                experiencia real en pruebas funcionales, análisis de datos
+                con SQL/PL-SQL, y soporte técnico N1/N2 con monitoreo de
+                servicios. Explora abajo la experiencia según el perfil
+                que te interese:
+            </p>
+
+            <div class="tabs-perfil" role="tablist">
+                <button class="tab-btn active" data-tab="qa" role="tab" aria-selected="true">🧪 QA / Testing</button>
+                <button class="tab-btn" data-tab="datos" role="tab" aria-selected="false">📊 Analista de Datos</button>
+                <button class="tab-btn" data-tab="soporte" role="tab" aria-selected="false">🖥️ Soporte y Monitoreo</button>
+            </div>
+
+            <div class="tab-panel active" id="tab-qa" role="tabpanel">
+                <p>
+                    En el <strong>Banco de la República</strong> hice parte
+                    del grupo de pruebas de Bre-B: ejecuté pruebas
+                    funcionales vía <strong>API REST</strong>, validando
+                    respuestas positivas y negativas, y verifiqué en
+                    <strong>Oracle</strong> que las transacciones quedaran
+                    correctamente registradas, para la implantación de una
+                    cámara participante.
+                </p>
+                <p>
+                    Además, construí un proyecto propio de testing en
+                    <strong>Java (JUnit, Mockito, JaCoCo)</strong> aplicando
+                    equivalence partitioning, boundary value analysis,
+                    cobertura de ramas y test doubles — ver "Software
+                    Testing Portfolio" abajo.
+                </p>
+            </div>
+
+            <div class="tab-panel" id="tab-datos" role="tabpanel">
+                <p>
+                    En <strong>Global Hitss</strong> ayudé a optimizar
+                    consultas <strong>PL/SQL</strong> ya existentes junto
+                    con el equipo, para mejorar el tiempo de respuesta y
+                    eliminar errores y duplicidad de información. También
+                    apoyé la construcción y documentación de dashboards
+                    (soporte técnico, no diseño desde cero).
+                </p>
+                <p>
+                    En el Banco de la República validé la integridad de
+                    datos transaccionales en <strong>Oracle</strong> como
+                    parte del proceso de pruebas de Bre-B.
+                </p>
+            </div>
+
+            <div class="tab-panel" id="tab-soporte" role="tabpanel">
+                <p>
+                    En <strong>Global Hitss</strong> hice monitoreo N1,
+                    escalamientos y documentación de procesos operativos.
+                    En <strong>OESIA</strong> fui analista de soporte N2 en
+                    sitio: gestión del ciclo completo de casos en Remedy
+                    (apertura, proceso, escalamiento a N3/Ingeniería,
+                    documentación y cierre), incluyendo soporte a la
+                    implementación de productos de telecomunicaciones
+                    FTTH.
+                </p>
+                <p>
+                    Cuento con certificación <strong>ITIL v4</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos destacados</h2>
+            <div class="proyectos-grid">
+                <article class="proyecto-card">
+                    <h3>Software Testing Portfolio</h3>
+                    <p>Proyecto en Java (JUnit, Mockito, JaCoCo) aplicando equivalence partitioning, boundary value analysis, cobertura de ramas y test doubles.</p>
+                    <!-- PENDIENTE: pon aquí la URL real del repo -->
+                    <a href="#" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+                </article>
+                <article class="proyecto-card">
+                    <h3>ColombiaTech</h3>
+                    <p>Plataforma Full Stack de alquiler de casas con chat en tiempo real — NestJS (REST + GraphQL + WebSockets), React, Redux Toolkit, MongoDB.</p>
+                    <!-- PENDIENTE: pon aquí la URL real del repo -->
+                    <a href="#" target="_blank" rel="noopener noreferrer">Ver en GitHub →</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades técnicas</h2>
+            <ul class="skills-lista">
+                <li>SQL / PL-SQL</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>NestJS</li>
+                <li>React</li>
+                <li>MongoDB</li>
+                <li>GraphQL</li>
+                <li>Testing (JUnit, Mockito, pytest)</li>
+                <li>ITIL v4</li>
+                <li>API REST</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/lfac1/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/lariasca1994" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="mailto:ariascluisf@gmail.com">Correo</a></li>
+        </ul>
+    </footer>
+
+    <script src="JS/perfil.js"></script>
+    <script src="JS/tema.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Luis Felipe Arias</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="contacto.html">Contacto</a>
+        <button type="button" id="alternar-tema" class="boton-tema"
+                aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema">🌓</button>
+    </nav>
+
+    <main>
+        <section id="form-content">
+            <h2>Contacto</h2>
+            <form id="contactForm">
+                <div>
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <label for="correo">Tu correo:</label><br>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje:</label><br>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+            <p class="contacto-directo">
+                O escríbeme directo a
+                <a href="mailto:ariascluisf@gmail.com">ariascluisf@gmail.com</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/lfac1/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/lariasca1994" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="mailto:ariascluisf@gmail.com">Correo</a></li>
+        </ul>
+    </footer>
+
+    <script src="JS/formulario.js"></script>
+    <script src="JS/tema.js" defer></script>
+
+</body>
+</html>
