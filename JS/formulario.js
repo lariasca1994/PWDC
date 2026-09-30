@@ -7,7 +7,7 @@
 // de correo del visitante (Gmail, Outlook, etc.) para que solo tenga que
 // darle "Enviar" ahí. No requiere backend ni servicios externos.
 
-const CORREO_CONTACTO = 'ariascluisf@gmail.com';
+const CORREO_CONTACTO = 'ariascluisf@hotmail.com';
 
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
