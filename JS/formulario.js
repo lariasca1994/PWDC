@@ -1,27 +1,27 @@
 // formulario.js
 //
-// CORRECCIÓN respecto a la versión anterior: el formulario original solo
-// hacía console.log() del mensaje y no lo enviaba a ningún lado — era una
-// simulación, no un envío real. Esta versión sí envía de verdad: arma un
-// enlace "mailto:" con el asunto y el cuerpo ya llenos, y abre el cliente
-// de correo del visitante (Gmail, Outlook, etc.) para que solo tenga que
-// darle "Enviar" ahí. No requiere backend ni servicios externos.
+// El formulario no envía datos a ningún servidor: arma el mensaje con el
+// nombre, el contacto (opcional) y el texto, y abre WhatsApp con ese mensaje
+// ya escrito para que el visitante solo tenga que darle "Enviar". No requiere
+// backend ni servicios externos, y no publica ningún número de teléfono.
 
-const CORREO_CONTACTO = 'correo-retirado';
+const WHATSAPP_USUARIO = 'cortosvar26';
 
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const nombre = document.getElementById('nombre').value;
-    const correo = document.getElementById('correo').value;
-    const mensaje = document.getElementById('mensaje').value;
+    const nombre = document.getElementById('nombre').value.trim();
+    const contacto = document.getElementById('contacto').value.trim();
+    const mensaje = document.getElementById('mensaje').value.trim();
 
-    const asunto = encodeURIComponent(`Contacto desde el portafolio — ${nombre}`);
-    const cuerpo = encodeURIComponent(
-        `Nombre: ${nombre}\nCorreo de contacto: ${correo}\n\nMensaje:\n${mensaje}`
-    );
+    const texto = [
+        `Hola, soy ${nombre} (te escribo desde tu portafolio).`,
+        contacto ? `Mi contacto: ${contacto}` : '',
+        '',
+        mensaje
+    ].filter((linea, i) => linea !== '' || i === 2).join('\n');
 
-    window.location.href = `mailto:${CORREO_CONTACTO}?subject=${asunto}&body=${cuerpo}`;
+    window.open(`https://wa.me/${WHATSAPP_USUARIO}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
 
     document.getElementById('contactForm').reset();
 });

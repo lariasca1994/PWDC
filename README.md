@@ -58,7 +58,7 @@ enlaza a una demo en vivo cuando está desplegado.
 └── JS/
     ├── perfil.js          # pestañas de la sección "Sobre mí"
     ├── tema.js             # alternador de tema claro/oscuro (localStorage)
-    └── formulario.js        # arma un mailto: con el mensaje del formulario
+    └── formulario.js        # abre WhatsApp con el mensaje del formulario ya escrito
 ```
 
 ---
@@ -66,14 +66,14 @@ enlaza a una demo en vivo cuando está desplegado.
 ## 3. Arquitectura
 
 <p align="center">
-  <img src="docs/arquitectura.svg" alt="Diagrama de arquitectura: GitHub Pages sirve las páginas y estilos; en el navegador corren perfil.js, tema.js y formulario.js; el formulario abre el cliente de correo y el sitio enlaza a las demos del portafolio" width="100%">
+  <img src="docs/arquitectura.svg" alt="Diagrama de arquitectura: GitHub Pages sirve las páginas y estilos; en el navegador corren perfil.js, tema.js y formulario.js; el formulario abre WhatsApp con el mensaje listo y el sitio enlaza a las demos del portafolio" width="100%">
 </p>
 
 - En el **navegador del visitante** corren tres scripts: las pestañas de
   "Sobre mí", el cambio de tema claro/oscuro (recordado en `localStorage`) y el
   formulario de contacto.
-- El formulario no envía datos a ningún servidor: arma un enlace `mailto:` y
-  abre el **cliente de correo** del visitante.
+- El formulario no envía datos a ningún servidor: arma el mensaje y abre
+  **WhatsApp** con el texto ya escrito; el visitante decide si lo envía.
 
 ---
 
@@ -103,8 +103,9 @@ El sitio es público: no pide cuenta ni inicio de sesión.
 ### 5.2 Escribirme
 
 1. Abre **Contacto**.
-2. Completa **Nombre**, **Tu correo** y **Mensaje**.
-3. Pulsa **Enviar**: se abre tu cliente de correo con el mensaje listo para enviar.
+2. Completa **Nombre**, **Mensaje** y, si quieres, **¿Cómo te contacto?**.
+3. Pulsa **Enviar por WhatsApp**: se abre WhatsApp con el mensaje listo para enviar.
+   También puedes escribir directo por WhatsApp o Telegram a **@cortosvar26**.
 
 ---
 

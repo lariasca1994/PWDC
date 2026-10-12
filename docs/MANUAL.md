@@ -35,17 +35,18 @@ elección en este navegador.
 | # | Campo | Qué escribir |
 |:-:|---|---|
 | 1 | Nombre | Tu nombre |
-| 2 | Correo | Tu correo, para poder responderte |
+| 2 | ¿Cómo te contacto? | Opcional: tu LinkedIn o usuario de Telegram, para poder responderte |
 | 3 | Mensaje | Lo que quieres decir |
-| 4 | Enviar | Abre **tu propio programa de correo** con el mensaje ya escrito; solo falta pulsar Enviar ahí |
+| 4 | Enviar por WhatsApp | Abre **WhatsApp** con el mensaje ya escrito; solo falta pulsar Enviar ahí |
 
-Los tres campos son obligatorios.
+Nombre y mensaje son obligatorios. También puedes escribir directo por WhatsApp o Telegram a
+**@cortosvar26**.
 
 ## 3. Qué información se maneja y dónde queda
 
 | Dato | Dónde queda |
 |---|---|
-| Nombre, correo y mensaje del formulario | **En ningún servidor.** El sitio arma un enlace `mailto:` y tu programa de correo envía el mensaje; el sitio no lo guarda ni lo transmite |
+| Nombre, contacto y mensaje del formulario | **En ningún servidor.** El sitio arma el mensaje y abre WhatsApp; el envío lo haces tú desde WhatsApp y el sitio no lo guarda ni lo transmite |
 | Preferencia de tema | `localStorage` de tu navegador |
 
 ## 4. Seguridad: qué se garantiza
@@ -54,6 +55,6 @@ Comprobado en el código (`JS/formulario.js`, `JS/tema.js`):
 
 - **Sin recolección de datos:** no hay backend, base de datos, cookies de seguimiento ni servicios
   de terceros para el formulario.
-- **Tú controlas el envío:** el mensaje sale desde tu propio correo y puedes revisarlo antes de
+- **Tú controlas el envío:** el mensaje sale desde tu propio WhatsApp y puedes revisarlo antes de
   enviarlo.
 - **HTTPS** provisto por GitHub Pages.
