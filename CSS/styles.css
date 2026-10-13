@@ -307,7 +307,7 @@ html[data-tema="oscuro"] .proyecto-card {
   --tono: var(--c-claro, var(--acento));
 }
 
-/* Franja superior del color del proyecto, se ensancha al pasar el puntero */
+/* Franja superior del color del proyecto, se engrosa al pasar el puntero */
 .proyecto-card::before {
   content: "";
   position: absolute;
@@ -316,8 +316,8 @@ html[data-tema="oscuro"] .proyecto-card {
   right: 0;
   height: 3px;
   background: var(--tono);
-  transform: scaleX(0.18);
-  transform-origin: left;
+  transform: scaleY(1);
+  transform-origin: top;
   transition: transform 0.45s cubic-bezier(.2, .7, .2, 1);
 }
 
@@ -339,7 +339,7 @@ html[data-tema="oscuro"] .proyecto-card {
   border-color: color-mix(in srgb, var(--tono) 55%, var(--borde));
 }
 
-.proyecto-card:hover::before { transform: scaleX(1); }
+.proyecto-card:hover::before { transform: scaleY(1.7); }
 .proyecto-card:hover::after { opacity: 1; }
 
 .proyecto-card h3 {
@@ -391,7 +391,7 @@ html[data-tema="oscuro"] .proyecto-card {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: color-mix(in srgb, var(--tono) 10%, var(--superficie));
+  background-color: color-mix(in srgb, var(--tono) 16%, var(--superficie));
   color: var(--tono);
   border: 1px solid color-mix(in srgb, var(--tono) 60%, transparent);
   transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
@@ -590,9 +590,14 @@ footer a:hover {
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
+.proyecto-card .tag {
+  background-color: color-mix(in srgb, var(--tono) 12%, var(--superficie));
+  border-color: color-mix(in srgb, var(--tono) 35%, var(--borde));
+  color: color-mix(in srgb, var(--tono) 55%, var(--texto));
+}
+
 .proyecto-card:hover .tag {
-  border-color: color-mix(in srgb, var(--tono) 40%, var(--borde));
-  color: var(--texto);
+  border-color: color-mix(in srgb, var(--tono) 60%, var(--borde));
 }
 
 .skills-lista li {
