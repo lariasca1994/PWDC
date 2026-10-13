@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/styles.css">
+    <script>document.documentElement.classList.add("anim");</script>
 </head>
 <body>
 
@@ -24,6 +25,7 @@
 
     <main>
         <section class="hero">
+            <div class="hero-fondo" aria-hidden="true"><span></span><span></span><span></span></div>
             <h1>Luis Felipe Arias</h1>
             <p class="tagline">Ingeniero de Sistemas — Pruebas Funcionales · Validación API REST · Soporte y Gestión de Incidentes</p>
         </section>
@@ -87,180 +89,165 @@
             <h2>Proyectos y Repositorios</h2>
             <div class="proyectos-grid">
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #17658a; --c-claro: #75b5d1;">
                     <h3>QALabSPBVI</h3>
                     <p>Laboratorio de pagos inmediatos con llaves (directorios, pagos intra e inter-SPBVI, ISO 20022) y plataforma QA tipo Jira con casos REST/JSON ejecutables, desplegada en siete plataformas cloud.</p>
                     <div class="proyecto-stack">
                         <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">Playwright</span><span class="tag">Azure SQL</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://qalabspbvi-prod.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/QALabSPBVI" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://qalabspbvi-prod.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #0b3a7e; --c-claro: #00c8ff;">
                     <h3>SysPulse</h3>
                     <p>Plataforma de operaciones TI: agentes para Windows y Android reportan la salud de los equipos; las alertas abren incidentes con prioridad, SLA y escalamiento N1 → N2 → N3, con avisos por Telegram y chat de mesa de servicio.</p>
                     <div class="proyecto-stack">
                         <span class="tag">C#</span><span class="tag">ASP.NET Core</span><span class="tag">React</span><span class="tag">MongoDB</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://syspulse.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/SysPulse" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://syspulse.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #171a21; --c-claro: #c9ced6;">
                     <h3>qa-evidencia</h3>
                     <p>Suite de pruebas E2E automatizadas en GitHub Actions contra 11 proyectos de este portafolio, con evidencia en capturas, resultados en DynamoDB y panel en vivo.</p>
                     <div class="proyecto-stack">
                         <span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">DynamoDB</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://d4i3vsgw7xwmh.cloudfront.net" target="_blank" rel="noopener noreferrer">Ver demo →</a>
+                        <a class="btn-demo" href="https://d4i3vsgw7xwmh.cloudfront.net" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #157f52; --c-claro: #6fdb8f;">
                     <h3>Gestor de Casos QA</h3>
                     <p>Plataforma para gestionar proyectos, suites, casos de prueba, ejecuciones, defectos y métricas de calidad.</p>
                     <div class="proyecto-stack">
                         <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">MongoDB</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://immxew65sfxj7nubwzlszdimfi0qegzc.lambda-url.us-east-1.on.aws/" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/gestor-casos-qa" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://immxew65sfxj7nubwzlszdimfi0qegzc.lambda-url.us-east-1.on.aws/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #336791; --c-claro: #8fb6d8;">
                     <h3>Verificador API</h3>
                     <p>Suite de validación automatizada para endpoints REST: pruebas de contrato, códigos de estado y tiempos de respuesta.</p>
                     <div class="proyecto-stack">
                         <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://eofvlnitsiuodup4eywdcenxwu0adgbz.lambda-url.us-east-1.on.aws/" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/verificador-api" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://eofvlnitsiuodup4eywdcenxwu0adgbz.lambda-url.us-east-1.on.aws/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #c7365c; --c-claro: #ff7a9c;">
                     <h3>Job Search Automation</h3>
                     <p>Automatiza la búsqueda de empleo: recolecta ofertas de cuatro portales, una IA (Gemini) las califica contra la hoja de vida, genera una HV adaptada y avisa por Telegram.</p>
                     <div class="proyecto-stack">
                         <span class="tag">n8n</span><span class="tag">Gemini</span><span class="tag">Docker</span>
                     </div>
-                    <div class="proyecto-links">
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/job-search-automation" target="_blank" rel="noopener noreferrer">Ver código →</a>
-                    </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #00758f; --c-claro: #5cc6de;">
                     <h3>Motor de Horarios</h3>
                     <p>Coordina reuniones entre varias personas: cada usuario registra su disponibilidad y el motor propone los 3 mejores huecos comunes y avisa por correo.</p>
                     <div class="proyecto-stack">
                         <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">MySQL HeatWave</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://motor-horarios-oci.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/motor-horarios-oci" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://motor-horarios-oci.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #047857; --c-claro: #34d399;">
                     <h3>ColombiaTech2</h3>
                     <p>Plataforma de alquiler de vivienda con mensajería en tiempo real entre arrendadores e inquilinos; backend en REST, GraphQL y WebSockets.</p>
                     <div class="proyecto-stack">
                         <span class="tag">NestJS</span><span class="tag">React</span><span class="tag">MongoDB</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://colombia-tech2.vercel.app/" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/ColombiaTech2" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://colombia-tech2.vercel.app/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #c74634; --c-claro: #f29a8c;">
                     <h3>PRPagos</h3>
                     <p>Simulador de flujos de pago y validación de reglas transaccionales, en versión de escritorio (Java Swing) y web (FastAPI).</p>
                     <div class="proyecto-stack">
                         <span class="tag">Java</span><span class="tag">FastAPI</span><span class="tag">Oracle</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://prpagos-web-1087929107584.southamerica-east1.run.app" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/PRPagos" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://prpagos-web-1087929107584.southamerica-east1.run.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #c94a1e; --c-claro: #f08a5d;">
                     <h3>Reservas Corferias</h3>
                     <p>Sistema de reservas para un centro de convenciones: catálogo de escenarios, calendario de disponibilidad y panel administrativo.</p>
                     <div class="proyecto-stack">
                         <span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Azure SQL</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://reservas-corferias.blueocean-86680030.eastus.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/reservas-corferias" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://reservas-corferias.blueocean-86680030.eastus.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #0b7360; --c-claro: #3cc9a8;">
                     <h3>TaskFlow</h3>
                     <p>Gestor de tareas con carga de archivos, procesamiento con pandas y generación de reportes y analítica en tiempo real.</p>
                     <div class="proyecto-stack">
                         <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">MongoDB</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://taskflow-812302804238.us-central1.run.app/" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/taskflow" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://taskflow-812302804238.us-central1.run.app/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #4338ca; --c-claro: #a5b4fc;">
                     <h3>Lottery AI</h3>
                     <p>Análisis y modelos predictivos de cuatro loterías colombianas: demuestra con backtesting que los números no se pueden predecir y estima lo que sí (venta, probabilidad de ganador, valor esperado).</p>
                     <div class="proyecto-stack">
                         <span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">GitHub Actions</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://lottery-ai-oa2p.onrender.com" target="_blank" rel="noopener noreferrer">Ver demo →</a>
+                        <a class="btn-demo" href="https://lottery-ai-oa2p.onrender.com" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #c26a00; --c-claro: #f29111;">
                     <h3>Calidad Afiliaciones</h3>
                     <p>Motor de control de calidad para procesos de afiliación: validación de reglas de negocio y seguimiento de inconsistencias.</p>
                     <div class="proyecto-stack">
                         <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">MySQL</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://calidad-afiliaciones.blueocean-86680030.eastus.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/calidad-afiliaciones" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://calidad-afiliaciones.blueocean-86680030.eastus.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #946200; --c-claro: #fab219;">
                     <h3>Portfolio Status</h3>
                     <p>Dashboard de observabilidad que monitorea en tiempo real la disponibilidad y el tiempo de respuesta de los proyectos desplegados de este portafolio.</p>
                     <div class="proyecto-stack">
                         <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">Oracle DB</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://frontend-nine-topaz-99.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/portafolio-status" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://frontend-nine-topaz-99.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
-                <article class="proyecto-card">
+                <article class="proyecto-card" style="--c: #0f766e; --c-claro: #14b8a6;">
                     <h3>Gestor de Incidentes TI</h3>
                     <p>Mini ITSM para gestión de incidentes de soporte: SLA por prioridad, escalamiento automático N1 → N2 → N3 y trazabilidad completa de cada caso.</p>
                     <div class="proyecto-stack">
                         <span class="tag">C#</span><span class="tag">ASP.NET Core</span><span class="tag">Azure SQL</span>
                     </div>
                     <div class="proyecto-links">
-                        <a class="btn-demo" href="https://gestorincidentesti.livelywater-fe29fe0b.australiaeast.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo →</a>
-                        <a class="btn-codigo" href="https://github.com/lariasca1994/GestorIncidentesTI" target="_blank" rel="noopener noreferrer">Ver código →</a>
+                        <a class="btn-demo" href="https://gestorincidentesti.livelywater-fe29fe0b.australiaeast.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
                     </div>
                 </article>
 
@@ -315,6 +302,7 @@
 
     <script src="JS/perfil.js"></script>
     <script src="JS/tema.js" defer></script>
+    <script src="JS/animaciones.js" defer></script>
 
 </body>
 </html>

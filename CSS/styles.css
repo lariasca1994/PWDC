@@ -112,12 +112,54 @@ html[data-tema="oscuro"] .hero {
   background: linear-gradient(180deg, rgba(92, 200, 255, 0.08) 0%, transparent 100%);
 }
 
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Luces que derivan lentamente detrás del nombre */
+.hero-fondo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-fondo span {
+  position: absolute;
+  width: 46%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(48px);
+  opacity: 0.5;
+  animation: derivar 16s ease-in-out infinite alternate;
+}
+
+.hero-fondo span:nth-child(1) { top: -30%; left: 4%; background: rgba(61, 132, 199, 0.35); }
+.hero-fondo span:nth-child(2) { top: 10%; right: 0; background: rgba(92, 200, 255, 0.3); animation-duration: 20s; animation-delay: -7s; }
+.hero-fondo span:nth-child(3) { bottom: -45%; left: 34%; background: rgba(23, 166, 115, 0.22); animation-duration: 24s; animation-delay: -12s; }
+
+html[data-tema="oscuro"] .hero-fondo span { opacity: 0.35; }
+
+@keyframes derivar {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(8%, 12%, 0) scale(1.15); }
+}
+
 .hero h1 {
   margin: 0 0 8px;
   color: var(--texto);
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 800;
   letter-spacing: -0.02em;
+  background: linear-gradient(100deg, var(--texto) 0%, var(--texto) 40%, var(--azul-claro) 50%, var(--texto) 60%, var(--texto) 100%);
+  background-size: 250% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: entrar 0.8s cubic-bezier(.2, .7, .2, 1) both, brillo 7s ease-in-out 1.2s infinite;
 }
 
 .hero p.tagline {
@@ -126,6 +168,17 @@ html[data-tema="oscuro"] .hero {
   color: var(--texto-suave);
   font-size: 1.1rem;
   font-weight: 500;
+  animation: entrar 0.8s cubic-bezier(.2, .7, .2, 1) 0.15s both;
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(14px); filter: blur(4px); }
+  to   { opacity: 1; transform: none; filter: none; }
+}
+
+@keyframes brillo {
+  0%, 55% { background-position: 100% 0; }
+  100%    { background-position: 0 0; }
 }
 
 section {
@@ -133,12 +186,46 @@ section {
 }
 
 section h2 {
+  position: relative;
   color: var(--texto);
   font-size: 1.5rem;
   font-weight: 700;
-  border-bottom: 2px solid var(--azul-claro);
+  border-bottom: 2px solid var(--borde);
   padding-bottom: 8px;
   margin-bottom: 24px;
+}
+
+/* La línea de color se dibuja de izquierda a derecha al aparecer el título */
+section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--azul-claro), var(--acento));
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(.2, .7, .2, 1) 0.15s;
+}
+
+html.anim section h2.revelar::after { transform: scaleX(0); }
+html.anim section h2.revelar.visible::after { transform: scaleX(1); }
+
+/* Entrada al hacer scroll (la clase "revelar" la pone JS/animaciones.js) */
+/* fill "backwards": al terminar, la animación se retira y el hover de las tarjetas sigue funcionando */
+html.anim .revelar {
+  opacity: 0;
+}
+
+html.anim .revelar.visible {
+  opacity: 1;
+  animation: subir 0.7s cubic-bezier(.2, .7, .2, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
 }
 
 /* Tabs de "Sobre mí" */
@@ -198,7 +285,13 @@ section h2 {
   gap: 20px;
 }
 
+/* Cada tarjeta trae su color en --c (tema claro) y --c-claro (tema oscuro),
+   tomados del color principal de la demo de ese proyecto. */
 .proyecto-card {
+  --tono: var(--c, var(--azul-claro));
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   background-color: var(--superficie);
   border: 1px solid var(--borde);
   border-radius: var(--radio);
@@ -207,14 +300,47 @@ section h2 {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  transition: transform 0.3s cubic-bezier(.2, .7, .2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+html[data-tema="oscuro"] .proyecto-card {
+  --tono: var(--c-claro, var(--acento));
+}
+
+/* Franja superior del color del proyecto, se ensancha al pasar el puntero */
+.proyecto-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--tono);
+  transform: scaleX(0.18);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(.2, .7, .2, 1);
+}
+
+/* Foco de luz que sigue al puntero (posición en --mx / --my desde animaciones.js) */
+.proyecto-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--tono) 13%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .proyecto-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--sombra-hover);
-  border-color: var(--azul-claro);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--tono) 18%, transparent), var(--sombra);
+  border-color: color-mix(in srgb, var(--tono) 55%, var(--borde));
 }
+
+.proyecto-card:hover::before { transform: scaleX(1); }
+.proyecto-card:hover::after { opacity: 1; }
 
 .proyecto-card h3 {
   margin: 0;
@@ -261,26 +387,37 @@ section h2 {
   transition: all 0.18s ease;
 }
 
-.btn-demo {
-  background-color: var(--exito-suave);
-  color: var(--exito);
-  border: 1px solid var(--exito);
+.proyecto-links a.btn-demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: color-mix(in srgb, var(--tono) 10%, var(--superficie));
+  color: var(--tono);
+  border: 1px solid color-mix(in srgb, var(--tono) 60%, transparent);
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.btn-demo:hover {
-  background-color: var(--exito);
+.proyecto-links a.btn-demo:hover,
+.proyecto-links a.btn-demo:focus-visible {
+  background-color: var(--tono);
   color: #fff;
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--tono) 35%, transparent);
+  transform: translateY(-1px);
 }
 
-.btn-codigo {
-  background-color: transparent;
-  color: var(--azul-claro);
-  border: 1px solid var(--azul-claro);
+html[data-tema="oscuro"] .proyecto-links a.btn-demo:hover,
+html[data-tema="oscuro"] .proyecto-links a.btn-demo:focus-visible {
+  color: #0b131c;
 }
 
-.btn-codigo:hover {
-  background-color: var(--azul-claro);
-  color: #fff;
+.btn-demo .flecha {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(.2, .7, .2, 1);
+}
+
+.btn-demo:hover .flecha,
+.btn-demo:focus-visible .flecha {
+  transform: translateX(4px);
 }
 
 /* Habilidades */
@@ -447,4 +584,32 @@ footer a {
 footer a:hover {
   background-color: rgba(255, 255, 255, 0.12);
   color: var(--acento);
+}
+/* Las etiquetas toman un toque del color del proyecto al pasar el puntero */
+.proyecto-stack .tag {
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.proyecto-card:hover .tag {
+  border-color: color-mix(in srgb, var(--tono) 40%, var(--borde));
+  color: var(--texto);
+}
+
+.skills-lista li {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.skills-lista li:hover {
+  transform: translateY(-2px);
+  background-color: var(--azul-claro);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+  .hero-fondo { display: none; }
 }

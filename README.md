@@ -58,7 +58,8 @@ enlaza a una demo en vivo cuando está desplegado.
 └── JS/
     ├── perfil.js          # pestañas de la sección "Sobre mí"
     ├── tema.js             # alternador de tema claro/oscuro (localStorage)
-    └── formulario.js        # abre WhatsApp con el mensaje del formulario ya escrito
+    ├── formulario.js        # abre WhatsApp con el mensaje del formulario ya escrito
+    └── animaciones.js       # entrada al hacer scroll y foco de luz en las tarjetas
 ```
 
 ---
@@ -96,7 +97,7 @@ El sitio es público: no pide cuenta ni inicio de sesión.
 1. Entra al [sitio](https://lariasca1994.github.io/PWDC/).
 2. **Sobre mí:** cambia entre las pestañas de los tres perfiles (QA, soporte y datos).
 3. **Proyectos y Repositorios:** cada tarjeta indica el stack del proyecto y ofrece
-   **Ver demo →** y **Ver código →**.
+   **Ver demo →**, con el color de cada proyecto.
 4. **Habilidades técnicas:** agrupadas en QA y soporte, desarrollo y datos, y cloud.
 5. El botón de tema alterna entre modo claro y oscuro, y el sitio recuerda tu elección.
 
