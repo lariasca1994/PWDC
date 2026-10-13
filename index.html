@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/styles.css?v=20261013b">
+    <link rel="stylesheet" href="CSS/styles.css?v=20261013c">
     <script>document.documentElement.classList.add("anim");</script>
 </head>
 <body>
@@ -257,36 +257,50 @@
         <section id="habilidades">
             <h2>Habilidades técnicas</h2>
 
-            <div class="skills-grupo">
-                <h3>QA y soporte</h3>
-                <ul class="skills-lista">
-                    <li>Pruebas funcionales</li>
-                    <li>Validación de servicios API REST</li>
-                    <li>Diseño de casos de prueba y trazabilidad</li>
-                    <li>Soporte N1 / N2 y gestión de incidentes</li>
-                    <li>ITIL v4 Foundation</li>
-                </ul>
-            </div>
+            <div class="skills-grid">
+                <div class="skills-grupo skills-grupo--qa">
+                    <div class="skills-cabecera">
+                        <span class="skills-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6"/></svg></span>
+                        <h3>QA y soporte</h3>
+                        <span class="skills-cuenta">5</span>
+                    </div>
+                    <ul class="skills-lista">
+                        <li><span class="skill-nombre">Pruebas funcionales</span></li>
+                        <li><span class="skill-nombre">Validación de servicios API REST</span></li>
+                        <li><span class="skill-nombre">Diseño de casos de prueba y trazabilidad</span></li>
+                        <li><span class="skill-nombre">Soporte N1 / N2 y gestión de incidentes</span></li>
+                        <li><span class="skill-nombre">ITIL v4 Foundation</span> <span class="skill-nivel">Certificado</span></li>
+                    </ul>
+                </div>
 
-            <div class="skills-grupo">
-                <h3>Desarrollo y datos</h3>
-                <ul class="skills-lista">
-                    <li>Python (bases)</li>
-                    <li>SQL (bases)</li>
-                    <li>MongoDB (bases)</li>
-                    <li>Google Sheets / Excel</li>
-                </ul>
-            </div>
+                <div class="skills-grupo skills-grupo--dev">
+                    <div class="skills-cabecera">
+                        <span class="skills-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8.5 8-4 4 4 4"/><path d="m15.5 8 4 4-4 4"/><path d="m13.2 5.5-2.4 13"/></svg></span>
+                        <h3>Desarrollo y datos</h3>
+                        <span class="skills-cuenta">4</span>
+                    </div>
+                    <ul class="skills-lista">
+                        <li><span class="skill-nombre">Python</span> <span class="skill-nivel">Básico</span></li>
+                        <li><span class="skill-nombre">SQL</span> <span class="skill-nivel">Básico</span></li>
+                        <li><span class="skill-nombre">MongoDB</span> <span class="skill-nivel">Básico</span></li>
+                        <li><span class="skill-nombre">Google Sheets / Excel</span> <span class="skill-nivel">Avanzado</span></li>
+                    </ul>
+                </div>
 
-            <div class="skills-grupo">
-                <h3>Cloud</h3>
-                <ul class="skills-lista">
-                    <li>AWS (Lambda, DynamoDB, CloudFront)</li>
-                    <li>Azure (Container Apps, Azure SQL)</li>
-                    <li>Google Cloud Run</li>
-                    <li>Oracle Cloud (OCI)</li>
-                    <li>Vercel / Render</li>
-                </ul>
+                <div class="skills-grupo skills-grupo--cloud">
+                    <div class="skills-cabecera">
+                        <span class="skills-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.5 18.5h9.7a4.3 4.3 0 0 0 .5-8.6 6 6 0 0 0-11.4 1.6A3.5 3.5 0 0 0 7.5 18.5Z"/></svg></span>
+                        <h3>Cloud</h3>
+                        <span class="skills-cuenta">5</span>
+                    </div>
+                    <ul class="skills-lista">
+                        <li><span class="skill-nombre">AWS</span> <span class="skill-detalle">Lambda · DynamoDB · CloudFront</span></li>
+                        <li><span class="skill-nombre">Azure</span> <span class="skill-detalle">Container Apps · Azure SQL</span></li>
+                        <li><span class="skill-nombre">Google Cloud</span> <span class="skill-detalle">Cloud Run</span></li>
+                        <li><span class="skill-nombre">Oracle Cloud</span> <span class="skill-detalle">OCI</span></li>
+                        <li><span class="skill-nombre">Vercel / Render</span></li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
@@ -300,9 +314,9 @@
         </ul>
     </footer>
 
-    <script src="JS/perfil.js?v=20261013b"></script>
-    <script src="JS/tema.js?v=20261013b" defer></script>
-    <script src="JS/animaciones.js?v=20261013b" defer></script>
+    <script src="JS/perfil.js?v=20261013c"></script>
+    <script src="JS/tema.js?v=20261013c" defer></script>
+    <script src="JS/animaciones.js?v=20261013c" defer></script>
 
 </body>
 </html>

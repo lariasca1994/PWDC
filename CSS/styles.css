@@ -420,37 +420,173 @@ html[data-tema="oscuro"] .proyecto-links a.btn-demo:focus-visible {
   transform: translateX(4px);
 }
 
-/* Habilidades */
+/* Habilidades: una tarjeta por grupo, cada una con su color (--g / --g-claro) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 20px;
+}
+
 .skills-grupo {
-  margin-bottom: 18px;
+  --g: #3d84c7;
+  --g-claro: #7cc0f5;
+  --tono-g: var(--g);
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  background:
+    radial-gradient(120% 70% at 100% 0%, color-mix(in srgb, var(--tono-g) 9%, transparent), transparent 60%),
+    var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s cubic-bezier(.2, .7, .2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-grupo--qa    { --g: #0f8a6a; --g-claro: #34d3a6; }
+.skills-grupo--dev   { --g: #5b4fd6; --g-claro: #a5a0ff; }
+.skills-grupo--cloud { --g: #0a78b8; --g-claro: #5cc8ff; }
+
+html[data-tema="oscuro"] .skills-grupo { --tono-g: var(--g-claro); }
+
+.skills-grupo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--tono-g), color-mix(in srgb, var(--tono-g) 25%, transparent));
+}
+
+.skills-grupo:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--tono-g) 45%, var(--borde));
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--tono-g) 16%, transparent), var(--sombra);
+}
+
+.skills-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.skills-icono {
+  display: grid;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 11px;
+  color: var(--tono-g);
+  background: color-mix(in srgb, var(--tono-g) 14%, var(--superficie));
+  border: 1px solid color-mix(in srgb, var(--tono-g) 30%, transparent);
+}
+
+.skills-icono svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .skills-grupo h3 {
-  margin: 0 0 10px;
-  font-size: 0.85rem;
+  margin: 0;
+  flex: 1;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--texto-suave);
+  letter-spacing: 0.09em;
+  color: var(--texto);
   font-weight: 700;
+}
+
+.skills-cuenta {
+  min-width: 26px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--tono-g);
+  background: color-mix(in srgb, var(--tono-g) 12%, transparent);
 }
 
 .skills-lista {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .skills-lista li {
-  background-color: var(--azul-medio);
-  color: var(--texto-claro);
-  padding: 7px 16px;
-  border-radius: 999px;
-  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  position: relative;
+  padding: 7px 12px 7px 25px;
+  border: 1px solid var(--borde);
+  border-radius: 9px;
+  background: var(--superficie-alt);
+  color: var(--texto);
+  font-size: 0.85rem;
   font-weight: 600;
+  line-height: 1.35;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+/* Punto del color del grupo antes de cada habilidad */
+.skills-lista li::before {
+  content: "";
+  position: absolute;
+  top: calc(7px + 0.675em - 3px);
+  left: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tono-g);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tono-g) 18%, transparent);
+}
+
+.skills-lista li:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--tono-g) 55%, var(--borde));
+  background: color-mix(in srgb, var(--tono-g) 9%, var(--superficie));
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--tono-g) 15%, transparent);
+}
+
+.skill-detalle {
+  color: var(--texto-suave);
+  font-weight: 500;
+  font-size: 0.78rem;
+}
+
+.skill-nivel {
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tono-g);
+  background: color-mix(in srgb, var(--tono-g) 13%, transparent);
+}
+
+/* Las habilidades entran en cascada cuando aparece su tarjeta */
+html.anim .skills-grupo.visible .skills-lista li {
+  animation: subir 0.5s cubic-bezier(.2, .7, .2, 1) backwards;
+}
+.skills-grupo.visible .skills-lista li:nth-child(1) { animation-delay: 0.15s; }
+.skills-grupo.visible .skills-lista li:nth-child(2) { animation-delay: 0.21s; }
+.skills-grupo.visible .skills-lista li:nth-child(3) { animation-delay: 0.27s; }
+.skills-grupo.visible .skills-lista li:nth-child(4) { animation-delay: 0.33s; }
+.skills-grupo.visible .skills-lista li:nth-child(5) { animation-delay: 0.39s; }
 
 /* Formulario de contacto */
 form#contactForm {
@@ -598,15 +734,6 @@ footer a:hover {
 
 .proyecto-card:hover .tag {
   border-color: color-mix(in srgb, var(--tono) 60%, var(--borde));
-}
-
-.skills-lista li {
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.skills-lista li:hover {
-  transform: translateY(-2px);
-  background-color: var(--azul-claro);
 }
 
 @media (prefers-reduced-motion: reduce) {
