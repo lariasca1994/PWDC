@@ -5,7 +5,7 @@
 // ya escrito para que el visitante solo tenga que darle "Enviar". No requiere
 // backend ni servicios externos, y no publica ningún número de teléfono.
 
-const WHATSAPP_USUARIO = 'cortosvar26';
+const WHATSAPP_USUARIO = 'carraian160';
 
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();

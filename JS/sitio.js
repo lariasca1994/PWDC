@@ -130,6 +130,59 @@
         });
     }
 
+    // Tarjetas: luz que sigue al cursor e inclinación 3D suave (solo con mouse y sin "reducir movimiento").
+    var finas = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (finas && !reducir) {
+        document.querySelectorAll(".servicio, .proyecto, .habilidad, .proceso li, .contacto-btn, .cifras > div").forEach(function (t) {
+            var inclina = !t.classList.contains("contacto-btn") && t.parentElement && !t.parentElement.classList.contains("cifras");
+            var cuadro = null;
+            t.addEventListener("pointerenter", function () { cuadro = t.getBoundingClientRect(); });
+            t.addEventListener("pointermove", function (e) {
+                if (!cuadro) cuadro = t.getBoundingClientRect();
+                var x = (e.clientX - cuadro.left) / cuadro.width, y = (e.clientY - cuadro.top) / cuadro.height;
+                t.style.setProperty("--mx", (x * 100).toFixed(1) + "%");
+                t.style.setProperty("--my", (y * 100).toFixed(1) + "%");
+                if (inclina) t.style.transform = "perspective(900px) rotateX(" + ((0.5 - y) * 5).toFixed(2) + "deg) rotateY(" + ((x - 0.5) * 6).toFixed(2) + "deg) translateY(-6px)";
+            });
+            t.addEventListener("pointerleave", function () { cuadro = null; t.style.transform = ""; });
+        });
+    }
+
+    // Ilustración de la portada: profundidad con el mouse, con el dedo o al inclinar la tablet/celular;
+    // un toque repite la animación de entrada.
+    var ilus = document.querySelector(".portada__ilustracion");
+    if (ilus && !reducir) {
+        var fijar = function (x, y) {
+            ilus.style.setProperty("--px", Math.max(-1, Math.min(1, x)).toFixed(3));
+            ilus.style.setProperty("--py", Math.max(-1, Math.min(1, y)).toFixed(3));
+        };
+        ilus.addEventListener("pointermove", function (e) {
+            var r = ilus.getBoundingClientRect();
+            fijar((e.clientX - r.left) / r.width * 2 - 1, (e.clientY - r.top) / r.height * 2 - 1);
+        });
+        ilus.addEventListener("pointerleave", function () { fijar(0, 0); });
+        ilus.addEventListener("pointerup", function (e) {
+            if (e.pointerType === "mouse") return;
+            ilus.classList.add("repite");
+            void ilus.offsetWidth;
+            ilus.classList.remove("repite");
+            setTimeout(function () { fijar(0, 0); }, 900);
+        });
+        if (!finas && "DeviceOrientationEvent" in window) {
+            var base = null;
+            window.addEventListener("deviceorientation", function (e) {
+                if (e.beta == null || e.gamma == null) return;
+                var horizontal = screen.orientation ? /landscape/.test(screen.orientation.type) : Math.abs(window.orientation || 0) === 90;
+                var b = horizontal ? e.gamma : e.beta, g = horizontal ? -e.beta : e.gamma;
+                if (!base) base = { b: b, g: g };
+                fijar((g - base.g) / 25, (b - base.b) / 25);
+            }, { passive: true });
+            var reiniciar = function () { base = null; fijar(0, 0); };
+            if (screen.orientation) screen.orientation.addEventListener("change", reiniciar);
+            else window.addEventListener("orientationchange", reiniciar);
+        }
+    }
+
     // Transiciones entre páginas: una transición cancelada no deja error en la consola.
     function calmar(t) { if (!t) return; [t.ready, t.finished, t.updateCallbackDone].forEach(function (p) { if (p) p.catch(function () {}); }); }
     window.addEventListener("pageswap", function (e) { calmar(e.viewTransition); });

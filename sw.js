@@ -1,7 +1,7 @@
 // Service worker del sitio (PWA): guarda la cáscara y la página sin conexión. Rutas relativas
 // porque el sitio vive en /PWDC/ (GitHub Pages).
-const VERSION = "pwdc-v1";
-const CASCARA = ["./", "index.html", "contacto.html", "offline.html", "estados.css", "offline.js", "CSS/styles.css?v=20261115", "JS/sitio.js?v=20261115", "JS/tema.js?v=20261115", "JS/formulario.js?v=20261115", "iconos/icono.svg", "iconos/icono-192.png", "manifest.webmanifest"];
+const VERSION = "pwdc-v3";
+const CASCARA = ["./", "index.html", "contacto.html", "offline.html", "estados.css", "offline.js", "CSS/styles.css?v=20261115c", "JS/sitio.js?v=20261115c", "JS/tema.js?v=20261115c", "JS/formulario.js?v=20261115c", "iconos/icono.svg", "iconos/icono-192.png", "manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(CASCARA)).then(() => self.skipWaiting()));
