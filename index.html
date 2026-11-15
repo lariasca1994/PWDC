@@ -2,321 +2,347 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Luis Felipe Arias - Ingeniero de Sistemas · QA · Soporte</title>
+    <meta name="description" content="Ingeniero de Sistemas: pruebas funcionales, validación de API REST, soporte y gestión de incidentes. Proyectos desplegados en siete nubes con pruebas automatizadas.">
     <link rel="icon" href="iconos/icono.svg" type="image/svg+xml">
     <link rel="icon" href="favicon.ico" sizes="48x48">
     <link rel="apple-touch-icon" href="iconos/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
     <meta name="theme-color" content="#0B1F33">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/styles.css?v=20261013d">
-    <script>document.documentElement.classList.add("anim");</script>
+    <link rel="stylesheet" href="CSS/styles.css?v=20261115">
+    <script>
+        (function () {
+            var r = document.documentElement, t = null;
+            try { t = localStorage.getItem("pwdc-tema"); } catch (e) {}
+            if (!t) t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "oscuro" : "claro";
+            r.setAttribute("data-tema", t);
+            r.classList.add("anim");
+        })();
+    </script>
 </head>
 <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="contacto.html">Contacto</a>
-        <button type="button" id="alternar-tema" class="boton-tema"
-                aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema">🌓</button>
-    </nav>
-
-    <main>
-        <section class="hero">
-            <div class="hero-fondo" aria-hidden="true"><span></span><span></span><span></span></div>
-            <h1>Luis Felipe Arias</h1>
-            <p class="tagline">Ingeniero de Sistemas — Pruebas Funcionales · Validación API REST · Soporte y Gestión de Incidentes</p>
-        </section>
-
-        <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <p>
-                Ingeniero de Sistemas egresado de la Universidad EAN, con más de 9 años de
-                experiencia combinada en soporte técnico N1/N2, gestión de incidentes y aseguramiento
-                de calidad mediante pruebas funcionales y validación de servicios API REST.
-                Explora abajo la experiencia según el perfil que te interese:
-            </p>
-
-            <div class="tabs-perfil" role="tablist">
-                <button class="tab-btn active" data-tab="qa" role="tab" aria-selected="true">🧪 QA / Pruebas</button>
-                <button class="tab-btn" data-tab="soporte" role="tab" aria-selected="false">🖥️ Soporte y Gestión TI</button>
-                <button class="tab-btn" data-tab="datos" role="tab" aria-selected="false">📊 Análisis y Calidad de Datos</button>
+    <header class="cabecera" id="cabecera">
+        <div class="contenedor cabecera__fila">
+            <a class="marca" href="#inicio" aria-label="Luis Felipe Arias, inicio">
+                <img src="iconos/icono.svg" alt="" width="34" height="34">
+                <span><strong>Luis Felipe Arias</strong><small>QA · Soporte TI · Cloud</small></span>
+            </a>
+            <nav class="menu" aria-label="Secciones">
+                <a href="#servicios">Servicios</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#proceso">Cómo trabajo</a>
+                <a href="#habilidades">Habilidades</a>
+                <span class="menu__luz" aria-hidden="true"></span>
+            </nav>
+            <div class="cabecera__acciones">
+                <button type="button" id="alternar-tema" class="boton-tema" aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema">🌓</button>
+                <a class="boton boton--principal boton--chico" href="contacto.html">Contacto</a>
             </div>
+        </div>
+    </header>
 
-            <div class="tab-panel active" id="tab-qa" role="tabpanel">
-                <p>
-                    En el <strong>Banco de la República</strong> (Profesional SPI) ejecuté pruebas
-                    funcionales en servicios tecnológicos mediante <strong>API REST</strong>, asegurando la
-                    validación completa de funcionalidades y contratos de datos. Diseñé casos de prueba
-                    alineados a requerimientos técnicos y documenté evidencias para garantizar control de
-                    calidad, trazabilidad y cumplimiento de estándares.
-                </p>
-                <p>
-                    Cuento con formación certificada en <em>Software Testing and Automation</em> (Coursera)
-                    y desarrollo soluciones para la validación y ejecución automatizada de pruebas de API.
-                </p>
+    <main id="contenido">
+        <!-- Portada: ilustración en SVG en lugar de foto. -->
+        <section class="portada" id="inicio">
+            <div class="portada__fondo" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="contenedor portada__rejilla">
+                <div class="portada__texto">
+                    <p class="antetitulo">Ingeniero de Sistemas · Universidad EAN</p>
+                    <h1>Calidad que se <span class="resaltado">prueba</span>, servicios que <span class="resaltado">no se caen</span>.</h1>
+                    <p class="portada__bajada">Pruebas Funcionales · Validación API REST · Soporte y Gestión de Incidentes. Más de 9 años entre soporte técnico N1/N2, gestión de incidentes y aseguramiento de calidad.</p>
+                    <div class="portada__botones">
+                        <a class="boton boton--principal" href="#proyectos">Ver proyectos <span class="flecha" aria-hidden="true">→</span></a>
+                        <a class="boton boton--borde" href="contacto.html">Hablemos</a>
+                    </div>
+                </div>
+                <div class="portada__ilustracion" aria-hidden="true">
+                    <svg viewBox="0 0 460 380" class="ilustracion">
+                        <defs>
+                            <linearGradient id="g-panel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#163a56"/><stop offset="1" stop-color="#0b1f33"/></linearGradient>
+                            <linearGradient id="g-acento" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5cc8ff"/><stop offset="1" stop-color="#3d84c7"/></linearGradient>
+                        </defs>
+                        <rect x="30" y="30" width="340" height="250" rx="18" fill="url(#g-panel)"/>
+                        <rect x="30" y="30" width="340" height="38" rx="18" fill="#1d4a6c"/>
+                        <circle cx="56" cy="49" r="5" fill="#ff6b6b"/><circle cx="74" cy="49" r="5" fill="#ffd166"/><circle cx="92" cy="49" r="5" fill="#17a673"/>
+                        <rect x="120" y="42" width="170" height="14" rx="7" fill="#0b1f33" opacity=".6"/>
+                        <g class="ilus-casos">
+                            <rect x="54" y="88" width="200" height="30" rx="8" fill="#0b1f33" opacity=".55"/><rect x="66" y="99" width="110" height="8" rx="4" fill="#c9dcec"/><rect x="200" y="96" width="42" height="14" rx="7" fill="#17a673"/>
+                            <rect x="54" y="126" width="200" height="30" rx="8" fill="#0b1f33" opacity=".55"/><rect x="66" y="137" width="90" height="8" rx="4" fill="#c9dcec"/><rect x="200" y="134" width="42" height="14" rx="7" fill="#17a673"/>
+                            <rect x="54" y="164" width="200" height="30" rx="8" fill="#0b1f33" opacity=".55"/><rect x="66" y="175" width="124" height="8" rx="4" fill="#c9dcec"/><rect x="200" y="172" width="42" height="14" rx="7" fill="#ff6b6b"/>
+                            <rect x="54" y="202" width="200" height="30" rx="8" fill="#0b1f33" opacity=".55"/><rect x="66" y="213" width="100" height="8" rx="4" fill="#c9dcec"/><rect x="200" y="210" width="42" height="14" rx="7" fill="#17a673"/>
+                        </g>
+                        <circle cx="316" cy="150" r="38" fill="none" stroke="#0b1f33" stroke-width="12" opacity=".6"/>
+                        <circle class="ilus-anillo" cx="316" cy="150" r="38" fill="none" stroke="url(#g-acento)" stroke-width="12" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="14" transform="rotate(-90 316 150)"/>
+                        <text x="316" y="156" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="18" fill="#f4f8fb">86%</text>
+                        <rect x="270" y="214" width="12" height="18" rx="3" fill="#5cc8ff" opacity=".5"/><rect x="288" y="200" width="12" height="32" rx="3" fill="#5cc8ff" opacity=".7"/><rect x="306" y="190" width="12" height="42" rx="3" fill="#5cc8ff"/><rect x="324" y="206" width="12" height="26" rx="3" fill="#5cc8ff" opacity=".6"/><rect x="342" y="196" width="12" height="36" rx="3" fill="#5cc8ff" opacity=".85"/>
+                        <g class="ilus-ticket">
+                            <rect x="250" y="250" width="180" height="96" rx="16" fill="#ffffff"/>
+                            <rect x="250" y="250" width="180" height="6" rx="3" fill="#ff9f43"/>
+                            <rect x="266" y="270" width="70" height="8" rx="4" fill="#3f5972" opacity=".5"/><rect x="380" y="267" width="36" height="14" rx="7" fill="#ffe8d1"/>
+                            <rect x="266" y="288" width="130" height="10" rx="5" fill="#14202c"/>
+                            <rect x="266" y="312" width="44" height="18" rx="6" fill="#e4eef7"/><rect x="316" y="312" width="44" height="18" rx="6" fill="#e4eef7"/><rect x="366" y="312" width="44" height="18" rx="6" fill="#3d84c7"/>
+                        </g>
+                        <g class="ilus-check"><circle cx="60" cy="310" r="26" fill="#17a673"/><path d="m48 310 8 8 16-17" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+                    </svg>
+                </div>
             </div>
-
-            <div class="tab-panel" id="tab-soporte" role="tabpanel">
-                <p>
-                    En <strong>Global Hitss Colombia</strong> gestioné incidentes críticos con análisis técnico,
-                    cumplimiento de acuerdos de nivel de servicio (SLA) y estandarización de procesos operativos
-                    con un 90% de cobertura.
-                </p>
-                <p>
-                    En <strong>OESIA Colombia</strong> coordiné soporte técnico de segundo y tercer nivel,
-                    gestión de tickets, priorización y resolución basada en datos con enfoque en continuidad operativa.
-                    Cuento con certificación <strong>ITIL v4 Foundation</strong>.
-                </p>
-            </div>
-
-            <div class="tab-panel" id="tab-datos" role="tabpanel">
-                <p>
-                    Experiencia en análisis operativo y seguimiento de requerimientos utilizando
-                    <strong>Google Sheets avanzado</strong> (funciones QUERY, filtros y referencias cruzadas)
-                    para optimizar métricas e indicadores de gestión.
-                </p>
-                <p>
-                    Formación complementaria en análisis exploratorio de datos con Python (SENA), fundamentos de
-                    SQL (Simplilearn) y conexión a bases de datos con MongoDB (Mongo University).
-                </p>
-            </div>
-        </section>
-
-        <section id="proyectos">
-            <h2>Proyectos y Repositorios</h2>
-            <div class="proyectos-grid">
-
-                <article class="proyecto-card" style="--c: #17658a; --c-claro: #75b5d1;">
-                    <h3>QALabSPBVI</h3>
-                    <p>Laboratorio de pagos inmediatos con llaves (directorios, pagos intra e inter-SPBVI, ISO 20022) y plataforma QA tipo Jira con casos REST/JSON ejecutables, desplegada en siete plataformas cloud.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">Playwright</span><span class="tag">Azure SQL</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://qalabspbvi-prod.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #0b3a7e; --c-claro: #00c8ff;">
-                    <h3>SysPulse</h3>
-                    <p>Plataforma de operaciones TI: agentes para Windows y Android reportan la salud de los equipos; las alertas abren incidentes con prioridad, SLA y escalamiento N1 → N2 → N3, con avisos por Telegram y chat de mesa de servicio.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">C#</span><span class="tag">ASP.NET Core</span><span class="tag">React</span><span class="tag">MongoDB</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://syspulse.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #171a21; --c-claro: #c9ced6;">
-                    <h3>qa-evidencia</h3>
-                    <p>Suite de pruebas E2E automatizadas en GitHub Actions contra 11 proyectos de este portafolio, con evidencia en capturas, resultados en DynamoDB y panel en vivo.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">DynamoDB</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://d4i3vsgw7xwmh.cloudfront.net" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #157f52; --c-claro: #6fdb8f;">
-                    <h3>Gestor de Casos QA</h3>
-                    <p>Plataforma para gestionar proyectos, suites, casos de prueba, ejecuciones, defectos y métricas de calidad.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">MongoDB</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://immxew65sfxj7nubwzlszdimfi0qegzc.lambda-url.us-east-1.on.aws/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #336791; --c-claro: #8fb6d8;">
-                    <h3>Verificador API</h3>
-                    <p>Suite de validación automatizada para endpoints REST: pruebas de contrato, códigos de estado y tiempos de respuesta.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://eofvlnitsiuodup4eywdcenxwu0adgbz.lambda-url.us-east-1.on.aws/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #c7365c; --c-claro: #ff7a9c;">
-                    <h3>Job Search Automation</h3>
-                    <p>Automatiza la búsqueda de empleo: recolecta ofertas de cuatro portales, una IA (Gemini) las califica contra la hoja de vida, genera una HV adaptada y avisa por Telegram.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">n8n</span><span class="tag">Gemini</span><span class="tag">Docker</span>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #00758f; --c-claro: #5cc6de;">
-                    <h3>Motor de Horarios</h3>
-                    <p>Coordina reuniones entre varias personas: cada usuario registra su disponibilidad y el motor propone los 3 mejores huecos comunes y avisa por correo.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">MySQL HeatWave</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://motor-horarios-oci.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #047857; --c-claro: #34d399;">
-                    <h3>ColombiaTech2</h3>
-                    <p>Plataforma de alquiler de vivienda con mensajería en tiempo real entre arrendadores e inquilinos; backend en REST, GraphQL y WebSockets.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">NestJS</span><span class="tag">React</span><span class="tag">MongoDB</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://colombia-tech2.vercel.app/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #c74634; --c-claro: #f29a8c;">
-                    <h3>PRPagos</h3>
-                    <p>Simulador de flujos de pago y validación de reglas transaccionales, en versión de escritorio (Java Swing) y web (FastAPI).</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">Java</span><span class="tag">FastAPI</span><span class="tag">Oracle</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://prpagos-web-1087929107584.us-east4.run.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #c94a1e; --c-claro: #f08a5d;">
-                    <h3>Reservas Corferias</h3>
-                    <p>Sistema de reservas para un centro de convenciones: catálogo de escenarios, calendario de disponibilidad y panel administrativo.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Azure SQL</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://reservas-corferias.blueocean-86680030.eastus.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #0b7360; --c-claro: #3cc9a8;">
-                    <h3>TaskFlow</h3>
-                    <p>Gestor de tareas con carga de archivos, procesamiento con pandas y generación de reportes y analítica en tiempo real.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">MongoDB</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://taskflow-812302804238.us-east4.run.app/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #4338ca; --c-claro: #a5b4fc;">
-                    <h3>Lottery AI</h3>
-                    <p>Análisis y modelos predictivos de cuatro loterías colombianas: demuestra con backtesting que los números no se pueden predecir y estima lo que sí (venta, probabilidad de ganador, valor esperado).</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">GitHub Actions</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://lottery-ai-app-cawi.onrender.com" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #c26a00; --c-claro: #f29111;">
-                    <h3>Calidad Afiliaciones</h3>
-                    <p>Motor de control de calidad para procesos de afiliación: validación de reglas de negocio y seguimiento de inconsistencias.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">MySQL</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://calidad-afiliaciones.blueocean-86680030.eastus.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #946200; --c-claro: #fab219;">
-                    <h3>Portfolio Status</h3>
-                    <p>Dashboard de observabilidad que monitorea en tiempo real la disponibilidad y el tiempo de respuesta de los proyectos desplegados de este portafolio.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">Oracle DB</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://frontend-nine-topaz-99.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
-                <article class="proyecto-card" style="--c: #0f766e; --c-claro: #14b8a6;">
-                    <h3>Gestor de Incidentes TI</h3>
-                    <p>Mini ITSM para gestión de incidentes de soporte: SLA por prioridad, escalamiento automático N1 → N2 → N3 y trazabilidad completa de cada caso.</p>
-                    <div class="proyecto-stack">
-                        <span class="tag">C#</span><span class="tag">ASP.NET Core</span><span class="tag">Azure SQL</span>
-                    </div>
-                    <div class="proyecto-links">
-                        <a class="btn-demo" href="https://gestorincidentesti.livelywater-fe29fe0b.australiaeast.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-
+            <div class="contenedor">
+                <dl class="cifras">
+                    <div><dt>Años de experiencia</dt><dd><span data-contar="9">9</span>+</dd></div>
+                    <div><dt>Proyectos en producción</dt><dd><span data-contar="14">14</span></dd></div>
+                    <div><dt>Nubes donde despliego</dt><dd><span data-contar="7">7</span></dd></div>
+                    <div><dt>Pruebas E2E automáticas</dt><dd>L-V</dd></div>
+                </dl>
             </div>
         </section>
 
-        <section id="habilidades">
-            <h2>Habilidades técnicas</h2>
-
-            <div class="skills-grid">
-                <div class="skills-grupo skills-grupo--qa">
-                    <div class="skills-cabecera">
-                        <span class="skills-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6"/></svg></span>
-                        <h3>QA y soporte</h3>
-                        <span class="skills-cuenta">5</span>
-                    </div>
-                    <ul class="skills-lista">
-                        <li><span class="skill-nombre">Pruebas funcionales</span></li>
-                        <li><span class="skill-nombre">Validación de servicios API REST</span></li>
-                        <li><span class="skill-nombre">Diseño de casos de prueba y trazabilidad</span></li>
-                        <li><span class="skill-nombre">Soporte N1 / N2 y gestión de incidentes</span></li>
-                        <li><span class="skill-nombre">ITIL v4 Foundation</span> <span class="skill-nivel">Certificado</span></li>
-                    </ul>
+        <!-- Servicios: los tres perfiles de "Sobre mí". -->
+        <section class="seccion" id="servicios">
+            <div class="contenedor">
+                <header class="seccion__cabeza">
+                    <p class="antetitulo">Sobre mí</p>
+                    <h2>Tres perfiles, un mismo enfoque: que funcione y se pueda medir</h2>
+                    <p>Ingeniero de Sistemas egresado de la Universidad EAN, con más de 9 años de experiencia combinada en soporte técnico N1/N2, gestión de incidentes y aseguramiento de calidad mediante pruebas funcionales y validación de servicios API REST.</p>
+                </header>
+                <div class="servicios">
+                    <article class="servicio">
+                        <span class="servicio__icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 14h9"/></svg></span>
+                        <h3>QA / Pruebas</h3>
+                        <p>En el <strong>Banco de la República</strong> (Profesional SPI) ejecuté pruebas funcionales en servicios tecnológicos mediante <strong>API REST</strong>, asegurando la validación completa de funcionalidades y contratos de datos. Diseñé casos de prueba alineados a requerimientos técnicos y documenté evidencias para garantizar control de calidad, trazabilidad y cumplimiento de estándares.</p>
+                        <p>Formación certificada en <em>Software Testing and Automation</em> (Coursera); desarrollo soluciones para la validación y ejecución automatizada de pruebas de API.</p>
+                    </article>
+                    <article class="servicio">
+                        <span class="servicio__icono" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m8 10 2.5 2.5L16 7"/></svg></span>
+                        <h3>Soporte y Gestión TI</h3>
+                        <p>En <strong>Global Hitss Colombia</strong> gestioné incidentes críticos con análisis técnico, cumplimiento de acuerdos de nivel de servicio (SLA) y estandarización de procesos operativos con un 90% de cobertura.</p>
+                        <p>En <strong>OESIA Colombia</strong> coordiné soporte técnico de segundo y tercer nivel, gestión de tickets, priorización y resolución basada en datos con enfoque en continuidad operativa. Certificación <strong>ITIL v4 Foundation</strong>.</p>
+                    </article>
+                    <article class="servicio">
+                        <span class="servicio__icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+                        <h3>Análisis y Calidad de Datos</h3>
+                        <p>Experiencia en análisis operativo y seguimiento de requerimientos utilizando <strong>Google Sheets avanzado</strong> (funciones QUERY, filtros y referencias cruzadas) para optimizar métricas e indicadores de gestión.</p>
+                        <p>Formación complementaria en análisis exploratorio de datos con Python (SENA), fundamentos de SQL (Simplilearn) y conexión a bases de datos con MongoDB (Mongo University).</p>
+                    </article>
                 </div>
+            </div>
+        </section>
 
-                <div class="skills-grupo skills-grupo--dev">
-                    <div class="skills-cabecera">
-                        <span class="skills-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8.5 8-4 4 4 4"/><path d="m15.5 8 4 4-4 4"/><path d="m13.2 5.5-2.4 13"/></svg></span>
-                        <h3>Desarrollo y datos</h3>
-                        <span class="skills-cuenta">4</span>
-                    </div>
-                    <ul class="skills-lista">
-                        <li><span class="skill-nombre">Python</span> <span class="skill-nivel">Básico</span></li>
-                        <li><span class="skill-nombre">SQL</span> <span class="skill-nivel">Básico</span></li>
-                        <li><span class="skill-nombre">MongoDB</span> <span class="skill-nivel">Básico</span></li>
-                        <li><span class="skill-nombre">Google Sheets / Excel</span> <span class="skill-nivel">Avanzado</span></li>
-                    </ul>
+        <!-- Proyectos con filtros por área. -->
+        <section class="seccion seccion--alterna" id="proyectos">
+            <div class="contenedor">
+                <header class="seccion__cabeza">
+                    <p class="antetitulo">Portafolio</p>
+                    <h2>Proyectos y repositorios</h2>
+                    <p>Aplicaciones desplegadas en producción, con monitoreo de disponibilidad y pruebas automatizadas de lunes a viernes.</p>
+                </header>
+                <div class="filtros" role="tablist" aria-label="Filtrar proyectos por área">
+                    <button type="button" class="filtro activo" data-filtro="todos" role="tab" aria-selected="true">Todos</button>
+                    <button type="button" class="filtro" data-filtro="qa" role="tab" aria-selected="false">QA y pruebas</button>
+                    <button type="button" class="filtro" data-filtro="ti" role="tab" aria-selected="false">Operación TI</button>
+                    <button type="button" class="filtro" data-filtro="datos" role="tab" aria-selected="false">Datos y automatización</button>
+                    <button type="button" class="filtro" data-filtro="web" role="tab" aria-selected="false">Aplicaciones web</button>
                 </div>
+                <div class="proyectos">
+                    <article class="proyecto" data-area="qa" style="--c: #17658a; --c-claro: #75b5d1;">
+                        <h3>QALabSPBVI</h3>
+                        <p>Laboratorio de pagos inmediatos con llaves (directorios, pagos intra e inter-SPBVI, ISO 20022) y plataforma QA tipo Jira con casos REST/JSON ejecutables, desplegada en siete plataformas cloud.</p>
+                        <div class="etiquetas"><span>Python</span><span>FastAPI</span><span>React</span><span>Playwright</span><span>Azure SQL</span></div>
+                        <a class="proyecto__enlace" href="https://qalabspbvi-prod.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="ti" style="--c: #0b3a7e; --c-claro: #00c8ff;">
+                        <h3>SysPulse</h3>
+                        <p>Plataforma de operaciones TI: agentes para Windows y Android reportan la salud de los equipos; las alertas abren incidentes con prioridad, SLA y escalamiento N1 → N2 → N3, con avisos por Telegram y chat de mesa de servicio.</p>
+                        <div class="etiquetas"><span>C#</span><span>ASP.NET Core</span><span>React</span><span>MongoDB</span></div>
+                        <a class="proyecto__enlace" href="https://syspulse.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="qa" style="--c: #059669; --c-claro: #34d399;">
+                        <h3>Panel de pruebas automatizadas</h3>
+                        <p>Suite de pruebas E2E automatizadas en GitHub Actions contra los proyectos de este portafolio, con evidencia en capturas, resultados en DynamoDB y panel en vivo.</p>
+                        <div class="etiquetas"><span>Playwright</span><span>TypeScript</span><span>DynamoDB</span></div>
+                        <a class="proyecto__enlace" href="https://d4i3vsgw7xwmh.cloudfront.net" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="qa" style="--c: #157f52; --c-claro: #6fdb8f;">
+                        <h3>Gestor de Casos QA</h3>
+                        <p>Plataforma para gestionar proyectos, suites, casos de prueba, ejecuciones, defectos y métricas de calidad.</p>
+                        <div class="etiquetas"><span>Python</span><span>FastAPI</span><span>MongoDB</span></div>
+                        <a class="proyecto__enlace" href="https://immxew65sfxj7nubwzlszdimfi0qegzc.lambda-url.us-east-1.on.aws/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="qa" style="--c: #336791; --c-claro: #8fb6d8;">
+                        <h3>Verificador API</h3>
+                        <p>Suite de validación automatizada para endpoints REST: pruebas de contrato, códigos de estado y tiempos de respuesta.</p>
+                        <div class="etiquetas"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span></div>
+                        <a class="proyecto__enlace" href="https://eofvlnitsiuodup4eywdcenxwu0adgbz.lambda-url.us-east-1.on.aws/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="datos" style="--c: #c7365c; --c-claro: #ff7a9c;">
+                        <h3>Job Search Automation</h3>
+                        <p>Automatiza la búsqueda de empleo: recolecta ofertas de cuatro portales, una IA (Gemini) las califica contra la hoja de vida, genera una HV adaptada y avisa por Telegram.</p>
+                        <div class="etiquetas"><span>n8n</span><span>Gemini</span><span>Docker</span></div>
+                    </article>
+                    <article class="proyecto" data-area="web" style="--c: #00758f; --c-claro: #5cc6de;">
+                        <h3>Motor de Horarios</h3>
+                        <p>Coordina reuniones entre varias personas: cada usuario registra su disponibilidad y el motor propone los 3 mejores huecos comunes y avisa por correo.</p>
+                        <div class="etiquetas"><span>Python</span><span>FastAPI</span><span>MySQL HeatWave</span></div>
+                        <a class="proyecto__enlace" href="https://motor-horarios-oci.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="web" style="--c: #047857; --c-claro: #34d399;">
+                        <h3>ColombiaTech2</h3>
+                        <p>Plataforma de alquiler de vivienda con mensajería en tiempo real entre arrendadores e inquilinos; backend en REST, GraphQL y WebSockets.</p>
+                        <div class="etiquetas"><span>NestJS</span><span>React</span><span>MongoDB</span></div>
+                        <a class="proyecto__enlace" href="https://colombia-tech2.vercel.app/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="web" style="--c: #c74634; --c-claro: #f29a8c;">
+                        <h3>PRPagos</h3>
+                        <p>Simulador de flujos de pago y validación de reglas transaccionales, en versión de escritorio (Java Swing) y web (FastAPI).</p>
+                        <div class="etiquetas"><span>Java</span><span>FastAPI</span><span>Oracle</span></div>
+                        <a class="proyecto__enlace" href="https://prpagos-web-1087929107584.us-east4.run.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="web" style="--c: #c94a1e; --c-claro: #f08a5d;">
+                        <h3>Reservas Corferias</h3>
+                        <p>Sistema de reservas para un centro de convenciones: catálogo de escenarios, calendario de disponibilidad y panel administrativo.</p>
+                        <div class="etiquetas"><span>PHP</span><span>Laravel</span><span>Azure SQL</span></div>
+                        <a class="proyecto__enlace" href="https://reservas-corferias.blueocean-86680030.eastus.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="datos" style="--c: #0b7360; --c-claro: #3cc9a8;">
+                        <h3>TaskFlow</h3>
+                        <p>Gestor de tareas con carga de archivos, procesamiento con pandas y generación de reportes y analítica en tiempo real.</p>
+                        <div class="etiquetas"><span>Python</span><span>FastAPI</span><span>MongoDB</span></div>
+                        <a class="proyecto__enlace" href="https://taskflow-812302804238.us-east4.run.app/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="datos" style="--c: #4338ca; --c-claro: #a5b4fc;">
+                        <h3>Lottery AI</h3>
+                        <p>Análisis y modelos predictivos de cuatro loterías colombianas: demuestra con backtesting que los números no se pueden predecir y estima lo que sí (venta, probabilidad de ganador, valor esperado).</p>
+                        <div class="etiquetas"><span>Node.js</span><span>PostgreSQL</span><span>GitHub Actions</span></div>
+                        <a class="proyecto__enlace" href="https://lottery-ai-app-cawi.onrender.com" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="datos" style="--c: #c26a00; --c-claro: #f29111;">
+                        <h3>Calidad Afiliaciones</h3>
+                        <p>Motor de control de calidad para procesos de afiliación: validación de reglas de negocio y seguimiento de inconsistencias.</p>
+                        <div class="etiquetas"><span>Python</span><span>FastAPI</span><span>MySQL</span></div>
+                        <a class="proyecto__enlace" href="https://calidad-afiliaciones.blueocean-86680030.eastus.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="ti" style="--c: #946200; --c-claro: #fab219;">
+                        <h3>Monitor de disponibilidad</h3>
+                        <p>Dashboard de observabilidad que monitorea en tiempo real la disponibilidad y el tiempo de respuesta de los proyectos desplegados de este portafolio.</p>
+                        <div class="etiquetas"><span>Python</span><span>FastAPI</span><span>React</span><span>Oracle DB</span></div>
+                        <a class="proyecto__enlace" href="https://frontend-nine-topaz-99.vercel.app" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                    <article class="proyecto" data-area="ti" style="--c: #0f766e; --c-claro: #14b8a6;">
+                        <h3>Gestor de Incidentes TI</h3>
+                        <p>Mini ITSM para gestión de incidentes de soporte: SLA por prioridad, escalamiento automático N1 → N2 → N3 y trazabilidad completa de cada caso.</p>
+                        <div class="etiquetas"><span>C#</span><span>ASP.NET Core</span><span>Azure SQL</span></div>
+                        <a class="proyecto__enlace" href="https://gestorincidentesti.livelywater-fe29fe0b.australiaeast.azurecontainerapps.io/" target="_blank" rel="noopener noreferrer">Ver demo <span class="flecha" aria-hidden="true">→</span></a>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                <div class="skills-grupo skills-grupo--cloud">
-                    <div class="skills-cabecera">
-                        <span class="skills-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.5 18.5h9.7a4.3 4.3 0 0 0 .5-8.6 6 6 0 0 0-11.4 1.6A3.5 3.5 0 0 0 7.5 18.5Z"/></svg></span>
-                        <h3>Cloud</h3>
-                        <span class="skills-cuenta">5</span>
+        <!-- Proceso de trabajo. -->
+        <section class="seccion" id="proceso">
+            <div class="contenedor">
+                <header class="seccion__cabeza">
+                    <p class="antetitulo">Cómo trabajo</p>
+                    <h2>De un requerimiento a un servicio que se puede medir</h2>
+                </header>
+                <ol class="proceso">
+                    <li><span class="proceso__num">01</span><h3>Entender el requerimiento</h3><p>Reglas de negocio, contratos de datos y criterios de aceptación claros antes de probar o construir.</p></li>
+                    <li><span class="proceso__num">02</span><h3>Diseñar los casos</h3><p>Casos de prueba trazables al requerimiento, con datos de prueba y resultado esperado.</p></li>
+                    <li><span class="proceso__num">03</span><h3>Ejecutar y automatizar</h3><p>Pruebas funcionales y de API REST; las repetibles se automatizan y corren solas.</p></li>
+                    <li><span class="proceso__num">04</span><h3>Evidenciar y mejorar</h3><p>Resultados con capturas, defectos documentados y seguimiento de SLA hasta el cierre.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Habilidades. -->
+        <section class="seccion seccion--alterna" id="habilidades">
+            <div class="contenedor">
+                <header class="seccion__cabeza">
+                    <p class="antetitulo">Herramientas</p>
+                    <h2>Habilidades técnicas</h2>
+                </header>
+                <div class="habilidades">
+                    <div class="habilidad" style="--tono: #17a673;">
+                        <div class="habilidad__cabeza">
+                            <span class="habilidad__icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6"/></svg></span>
+                            <h3>QA y soporte</h3><span class="habilidad__cuenta">5</span>
+                        </div>
+                        <ul>
+                            <li>Pruebas funcionales</li>
+                            <li>Validación de servicios API REST</li>
+                            <li>Diseño de casos de prueba y trazabilidad</li>
+                            <li>Soporte N1 / N2 y gestión de incidentes</li>
+                            <li>ITIL v4 Foundation <span class="nivel">Certificado</span></li>
+                        </ul>
                     </div>
-                    <ul class="skills-lista">
-                        <li><span class="skill-nombre">AWS</span> <span class="skill-detalle">Lambda · DynamoDB · CloudFront</span></li>
-                        <li><span class="skill-nombre">Azure</span> <span class="skill-detalle">Container Apps · Azure SQL</span></li>
-                        <li><span class="skill-nombre">Google Cloud</span> <span class="skill-detalle">Cloud Run</span></li>
-                        <li><span class="skill-nombre">Oracle Cloud</span> <span class="skill-detalle">OCI</span></li>
-                        <li><span class="skill-nombre">Vercel / Render</span></li>
-                    </ul>
+                    <div class="habilidad" style="--tono: #3d84c7;">
+                        <div class="habilidad__cabeza">
+                            <span class="habilidad__icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8.5 8-4 4 4 4"/><path d="m15.5 8 4 4-4 4"/><path d="m13.2 5.5-2.4 13"/></svg></span>
+                            <h3>Desarrollo y datos</h3><span class="habilidad__cuenta">4</span>
+                        </div>
+                        <ul>
+                            <li>Python <span class="nivel">Básico</span></li>
+                            <li>SQL <span class="nivel">Básico</span></li>
+                            <li>MongoDB <span class="nivel">Básico</span></li>
+                            <li>Google Sheets / Excel <span class="nivel nivel--alto">Avanzado</span></li>
+                        </ul>
+                    </div>
+                    <div class="habilidad" style="--tono: #5cc8ff;">
+                        <div class="habilidad__cabeza">
+                            <span class="habilidad__icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.5 18.5h9.7a4.3 4.3 0 0 0 .5-8.6 6 6 0 0 0-11.4 1.6A3.5 3.5 0 0 0 7.5 18.5Z"/></svg></span>
+                            <h3>Cloud</h3><span class="habilidad__cuenta">5</span>
+                        </div>
+                        <ul>
+                            <li>AWS <span class="detalle">Lambda · DynamoDB · CloudFront</span></li>
+                            <li>Azure <span class="detalle">Container Apps · Azure SQL</span></li>
+                            <li>Google Cloud <span class="detalle">Cloud Run</span></li>
+                            <li>Oracle Cloud <span class="detalle">OCI</span></li>
+                            <li>Vercel / Render</li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Llamado a la acción. -->
+        <section class="llamado">
+            <div class="contenedor llamado__fila">
+                <div>
+                    <h2>¿Buscas a alguien que pruebe, opere y despliegue?</h2>
+                    <p>Escríbeme por WhatsApp o Telegram; el formulario arma el mensaje por ti.</p>
+                </div>
+                <a class="boton boton--claro" href="contacto.html">Ir a contacto <span class="flecha" aria-hidden="true">→</span></a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <ul>
-            <li><a href="https://acortar.link/JXVdUa" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="https://github.com/lariasca1994" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://wa.me/cortosvar26" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-            <li><a href="https://t.me/cortosvar26" target="_blank" rel="noopener noreferrer">Telegram</a></li>
-        </ul>
+    <footer class="pie">
+        <div class="contenedor pie__fila">
+            <p><strong>Luis Felipe Arias</strong> · Ingeniero de Sistemas · QA · Soporte TI</p>
+            <ul>
+                <li><a href="https://acortar.link/JXVdUa" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/lariasca1994" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://wa.me/cortosvar26" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                <li><a href="https://t.me/cortosvar26" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+            </ul>
+        </div>
     </footer>
 
-    <script src="JS/perfil.js?v=20261013d"></script>
-    <script src="JS/tema.js?v=20261013d" defer></script>
-    <script src="JS/animaciones.js?v=20261013d" defer></script>
+    <!-- Barra inferior en el celular y la tablet en vertical. -->
+    <nav class="barra-movil" aria-label="Secciones">
+        <span class="barra-movil__luz" aria-hidden="true"></span>
+        <a href="#inicio" data-seccion="inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>Inicio</a>
+        <a href="#servicios" data-seccion="servicios"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Perfil</a>
+        <a href="#proyectos" data-seccion="proyectos"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Proyectos</a>
+        <a href="#habilidades" data-seccion="habilidades"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8.5 8-4 4 4 4"/><path d="m15.5 8 4 4-4 4"/></svg>Habilidades</a>
+        <a href="contacto.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Contacto</a>
+    </nav>
 
+    <script src="JS/tema.js?v=20261115" defer></script>
+    <script src="JS/sitio.js?v=20261115" defer></script>
 </body>
 </html>

@@ -2,76 +2,109 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Contacto - Luis Felipe Arias</title>
+    <meta name="description" content="Escríbele a Luis Felipe Arias por WhatsApp o Telegram.">
     <link rel="icon" href="iconos/icono.svg" type="image/svg+xml">
     <link rel="icon" href="favicon.ico" sizes="48x48">
     <link rel="apple-touch-icon" href="iconos/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
     <meta name="theme-color" content="#0B1F33">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/styles.css?v=20261013d">
-    <script>document.documentElement.classList.add("anim");</script>
+    <link rel="stylesheet" href="CSS/styles.css?v=20261115">
+    <script>
+        (function () {
+            var r = document.documentElement, t = null;
+            try { t = localStorage.getItem("pwdc-tema"); } catch (e) {}
+            if (!t) t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "oscuro" : "claro";
+            r.setAttribute("data-tema", t);
+            r.classList.add("anim");
+        })();
+    </script>
 </head>
 <body>
+    <header class="cabecera con-fondo" id="cabecera">
+        <div class="contenedor cabecera__fila">
+            <a class="marca" href="index.html" aria-label="Luis Felipe Arias, inicio">
+                <img src="iconos/icono.svg" alt="" width="34" height="34">
+                <span><strong>Luis Felipe Arias</strong><small>QA · Soporte TI · Cloud</small></span>
+            </a>
+            <nav class="menu" aria-label="Secciones">
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#proyectos">Proyectos</a>
+                <a href="index.html#proceso">Cómo trabajo</a>
+                <a href="index.html#habilidades">Habilidades</a>
+            </nav>
+            <div class="cabecera__acciones">
+                <button type="button" id="alternar-tema" class="boton-tema" aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema">🌓</button>
+            </div>
+        </div>
+    </header>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="contacto.html">Contacto</a>
-        <button type="button" id="alternar-tema" class="boton-tema"
-                aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema">🌓</button>
-    </nav>
-
-    <main>
-        <section id="form-content">
-            <h2>Contacto</h2>
-            <form id="contactForm">
-                <div>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                <div>
-                    <label for="contacto">¿Cómo te contacto? (opcional)</label>
-                    <input type="text" id="contacto" name="contacto" placeholder="Tu LinkedIn, usuario de Telegram…">
-                </div>
-                <div>
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-                </div>
-                <button type="submit">Enviar por WhatsApp <span class="flecha" aria-hidden="true">→</span></button>
-            </form>
-
-            <div class="contacto-directo">
-                <p>O escríbeme directo:</p>
+    <main class="contacto">
+        <div class="contenedor contacto__rejilla">
+            <div class="contacto__texto">
+                <p class="antetitulo">Contacto</p>
+                <h1>Hablemos de tu proyecto o tu vacante</h1>
+                <p>El formulario no envía datos a ningún servidor: arma el mensaje y abre WhatsApp con el texto listo para que solo pulses "Enviar".</p>
                 <div class="contacto-botones">
                     <a class="contacto-btn contacto-btn--whatsapp" href="https://wa.me/cortosvar26" target="_blank" rel="noopener noreferrer">
-                        <span class="contacto-icono" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.1a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5.1-1.5-.7-2.5-1.3-3.5-3-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5-.1-.1-.5-1.3-.7-1.8-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/></svg></span>
+                        <span class="contacto-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.1a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1Zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5.1-1.5-.7-2.5-1.3-3.5-3-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5-.1-.1-.5-1.3-.7-1.8-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/></svg></span>
                         <span class="contacto-texto"><strong>WhatsApp</strong><small>@cortosvar26</small></span>
                         <span class="flecha" aria-hidden="true">→</span>
                     </a>
                     <a class="contacto-btn contacto-btn--telegram" href="https://t.me/cortosvar26" target="_blank" rel="noopener noreferrer">
-                        <span class="contacto-icono" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21.9 4.6 2.9 12c-.7.3-.7 1.3.1 1.5l4.7 1.5 1.8 5.6c.2.6 1 .8 1.4.3l2.6-2.9 4.7 3.5c.6.4 1.5.1 1.6-.6l3-14.4c.2-.8-.6-1.4-1.3-1.1ZM8.7 14.5l9.4-6.9c.3-.2.5.1.3.3l-7.7 7.4c-.3.3-.5.7-.6 1.1l-.2 1.9-1.2-3.8Z"/></svg></span>
+                        <span class="contacto-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21.9 4.6 2.9 12c-.7.3-.7 1.3.1 1.5l4.7 1.5 1.8 5.6c.2.6 1 .8 1.4.3l2.6-2.9 4.7 3.5c.6.4 1.5.1 1.6-.6l3-14.4c.2-.8-.6-1.4-1.3-1.1ZM8.7 14.5l9.4-6.9c.3-.2.5.1.3.3l-7.7 7.4c-.3.3-.5.7-.6 1.1l-.2 1.9-1.2-3.8Z"/></svg></span>
                         <span class="contacto-texto"><strong>Telegram</strong><small>@cortosvar26</small></span>
                         <span class="flecha" aria-hidden="true">→</span>
                     </a>
                 </div>
             </div>
-        </section>
+            <section class="formulario" aria-labelledby="titulo-form">
+                <h2 id="titulo-form" class="oculto-visual">Formulario de contacto</h2>
+                <form id="contactForm">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required autocomplete="name">
+                    </div>
+                    <div>
+                        <label for="contacto">¿Cómo te contacto? (opcional)</label>
+                        <input type="text" id="contacto" name="contacto" placeholder="Tu LinkedIn, usuario de Telegram…">
+                    </div>
+                    <div>
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="boton boton--principal">Enviar por WhatsApp <span class="flecha" aria-hidden="true">→</span></button>
+                </form>
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <ul>
-            <li><a href="https://acortar.link/JXVdUa" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="https://github.com/lariasca1994" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://wa.me/cortosvar26" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-            <li><a href="https://t.me/cortosvar26" target="_blank" rel="noopener noreferrer">Telegram</a></li>
-        </ul>
+    <footer class="pie">
+        <div class="contenedor pie__fila">
+            <p><strong>Luis Felipe Arias</strong> · Ingeniero de Sistemas · QA · Soporte TI</p>
+            <ul>
+                <li><a href="https://acortar.link/JXVdUa" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/lariasca1994" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://wa.me/cortosvar26" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                <li><a href="https://t.me/cortosvar26" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+            </ul>
+        </div>
     </footer>
 
-    <script src="JS/formulario.js?v=20261013d"></script>
-    <script src="JS/tema.js?v=20261013d" defer></script>
-    <script src="JS/animaciones.js?v=20261013d" defer></script>
+    <nav class="barra-movil" aria-label="Secciones">
+        <a href="index.html#inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>Inicio</a>
+        <a href="index.html#servicios"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Perfil</a>
+        <a href="index.html#proyectos"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Proyectos</a>
+        <a href="index.html#habilidades"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8.5 8-4 4 4 4"/><path d="m15.5 8 4 4-4 4"/></svg>Habilidades</a>
+        <a href="contacto.html" class="activo" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>Contacto</a>
+    </nav>
 
+    <script src="JS/formulario.js?v=20261115"></script>
+    <script src="JS/tema.js?v=20261115" defer></script>
+    <script src="JS/sitio.js?v=20261115" defer></script>
 </body>
 </html>
