@@ -1,4 +1,4 @@
-# Portafolio — Luis Felipe Arias
+# Portafolio — Luis F. A.
 
 <p>
   <a href="https://lariasca1994.github.io/PWDC/"><img src="docs/demo-badge.svg" alt="Abrir el sitio en vivo" height="32"></a>
@@ -133,7 +133,7 @@ URL pública en un par de minutos — la que está en uso hoy es
 
 > 📘 **[Manual de usuario](docs/MANUAL.md)**: cómo usar el sitio campo por campo, qué datos se ingresan y qué garantiza en seguridad.
 
-**Luis Felipe Arias Carriazo**
+**Luis F. A.**
 [GitHub](https://github.com/lariasca1994) · [LinkedIn](https://linkedin.com/in/lfac1)
 
 Licencia: MIT.
