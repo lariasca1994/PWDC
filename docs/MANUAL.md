@@ -1,99 +1,157 @@
-# 📘 Manual de usuario · PWDC
+# 📘 Manual de usuario · Portafolio de Luis F. A. (PWDC)
 
-Guía del sitio de portafolio: qué contiene, cómo funciona el formulario de contacto y qué datos
-maneja. Para la parte técnica vuelve al [README](../README.md).
+## 1. Portada
 
-**Sitio:** [lariasca1994.github.io/PWDC](https://lariasca1994.github.io/PWDC/)
+![Portada del portafolio: calidad que se prueba, servicios que no se caen](img/manual/01-portada.png)
+
+| | |
+|---|---|
+| **Producto** | Portafolio profesional de Luis F. A. (PWDC) |
+| **Documento** | Manual de usuario |
+| **Versión** | 2.0 · noviembre de 2026 |
+| **Dirigido a** | Reclutadores, clientes y cualquier persona que visite el portafolio |
+| **Dirección** | [Portafolio](https://lariasca1994.github.io/PWDC/) |
+| **Autor** | Luis F. A. |
 
 ## Contenido
 
-1. [Proyecto: objetivos y alcances](#1-proyecto-objetivos-y-alcances)
-2. [Glosario](#2-glosario)
-3. [Plataformas, base de datos y servicios](#3-plataformas-base-de-datos-y-servicios)
-4. [Paso a paso](#4-paso-a-paso)
-5. [Seguridad: tu información protegida](#5-seguridad-tu-información-protegida)
-6. [Agradecimientos](#6-agradecimientos)
+1. [Portada](#1-portada)
+2. [Introducción](#2-introducción)
+3. [Objetivo](#3-objetivo)
+4. [Alcance](#4-alcance)
+5. [Acceso al sistema](#5-acceso-al-sistema)
+6. [Pantalla principal](#6-pantalla-principal)
+7. [Navegación](#7-navegación)
+8. [Funcionalidades](#8-funcionalidades)
+9. [Gestión de perfil](#9-gestión-de-perfil)
+10. [Mensajes frecuentes](#10-mensajes-frecuentes)
+11. [Preguntas frecuentes](#11-preguntas-frecuentes)
+12. [Glosario](#12-glosario)
 
 ---
 
-## 1. Proyecto: objetivos y alcances
+## 2. Introducción
 
-### Objetivo
+El **portafolio** presenta mi perfil profesional en QA, soporte TI y cloud: los servicios que
+ofrezco, los proyectos en producción con enlace a sus demos, cómo trabajo y mis habilidades. Desde
+**Contacto** puedes escribirme.
 
-Sitio de portafolio personal hecho con HTML, CSS y JavaScript puro, publicado en GitHub Pages. No
-tiene servidor, base de datos ni cuentas.
+![Cómo funciona el portafolio: personas, aplicación, plataforma e información](img/manual/00-como-funciona.svg)
 
-## 2. Glosario
+## 3. Objetivo
 
-Palabras técnicas que aparecen en este manual, explicadas en lenguaje simple.
+Que cualquier persona conozca mi experiencia, pruebe los proyectos en vivo y me contacte fácilmente.
 
-| Término | Qué significa |
-|---|---|
-| **API** | Puerta de entrada de un programa para que otros programas le pidan o le envíen datos. |
-| **Backend** | La parte de la aplicación que trabaja "detrás": procesa lo que envías y habla con la base de datos. |
-| **Base de datos** | Lugar donde la aplicación guarda la información de forma ordenada y permanente. |
-| **Cifrado / TLS / HTTPS** | Protección que codifica la información mientras viaja, para que nadie en el camino pueda leerla. |
-| **Cookie** | Pequeño dato que el navegador guarda para recordar tu sesión en ese sitio. |
-| **localStorage** | Espacio del navegador donde la aplicación guarda datos pequeños en tu equipo (por ejemplo, el tema o la sesión). |
-| **Navegador** | Programa con el que abres páginas web: Chrome, Edge, Firefox, Safari. |
-| **Nube** | Servidores de una empresa (Amazon, Microsoft, Google, Oracle…) donde la aplicación funciona sin depender de un computador propio. |
-| **Servidor** | Computador en la nube que atiende las peticiones de la aplicación. |
-| **Tema claro / oscuro** | Combinación de colores de la interfaz; puedes elegir la clara o la oscura. |
+## 4. Alcance
 
-## 3. Plataformas, base de datos y servicios
+**Incluye:** presentación, servicios, proyectos con filtros por área, forma de trabajo,
+habilidades, formulario de contacto y uso en celular, tablet y computador.
 
-Qué servicio de nube, base de datos o API usa el proyecto y para qué sirve cada uno.
+**No incluye:** cuentas de usuario ni almacenamiento de datos: el sitio solo muestra información.
 
-| Plataforma | Tipo | Qué hace en el proyecto |
-|---|---|---|
-| ![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white) | Nube | Sirve los archivos estáticos por HTTPS. |
+**Qué necesitas:** un navegador y conexión a internet.
 
-## 4. Paso a paso
+## 5. Acceso al sistema
 
-### 4.1 Inicio
+No necesitas cuenta: el sitio es público. Abre la
+[dirección del portafolio](https://lariasca1994.github.io/PWDC/).
 
-![Página de inicio](img/manual/01-inicio.png)
+## 6. Pantalla principal
 
-Presenta el perfil y los proyectos. El botón de tema alterna entre claro y oscuro y recuerda tu
-elección en este navegador.
+![Inicio con sus partes numeradas](img/manual/06-pantalla-principal.png)
 
-### 4.2 Contacto
+| # | Elemento | Qué hace |
+|:-:|---|---|
+| 1 | Menú | Lleva a Servicios, Proyectos, Cómo trabajo y Habilidades |
+| 2 | Tema | Cambia entre claro y oscuro; el sitio lo recuerda |
 
-![Formulario de contacto con sus campos numerados](img/manual/02-contacto.png)
+**Ver proyectos** baja a la lista de proyectos y **Hablemos** abre el formulario de contacto.
+
+## 7. Navegación
+
+En la tablet y en el celular el menú pasa a una barra inferior con Inicio, Perfil, Proyectos,
+Habilidades y Contacto.
+
+| Tablet en vertical | Celular |
+|:-:|:-:|
+| ![Portafolio en una tablet en vertical](img/manual/07-navegacion-tablet.png) | ![Portafolio en el celular con la barra inferior](img/manual/08-navegacion-movil.png) |
+
+![Portafolio en tema oscuro](img/manual/18-tema-oscuro.png)
+
+## 8. Funcionalidades
+
+### 8.1 Crear: escribirme
+
+En **Contacto** completa el formulario:
+
+![Formulario de contacto con sus campos numerados](img/manual/09-crear.png)
 
 | # | Campo | Qué escribir |
 |:-:|---|---|
 | 1 | Nombre | Tu nombre |
-| 2 | ¿Cómo te contacto? | Opcional: tu LinkedIn o usuario de Telegram, para poder responderte |
-| 3 | Mensaje | Lo que quieres decir |
-| 4 | Enviar por WhatsApp | Abre **WhatsApp** con el mensaje ya escrito; solo falta pulsar Enviar ahí |
+| 2 | ¿Cómo te contacto? | Opcional: tu correo o teléfono |
+| 3 | Mensaje | Lo que necesitas |
+| 4 | Enviar por WhatsApp | Abre WhatsApp con el mensaje listo; tú decides si lo envías |
 
-Nombre y mensaje son obligatorios. También puedes escribir directo por WhatsApp o Telegram a
-**@cortosvar26**.
+El formulario no envía datos a ningún servidor. También puedes escribirme directamente por WhatsApp,
+Telegram o correo desde los botones de la misma página.
 
-## 5. Seguridad: tu información protegida
+### 8.2 Consultar: proyectos, servicios y habilidades
 
-Tu confianza es lo primero: la plataforma solo pide los datos necesarios para funcionar, los protege y no los comparte con terceros. Esto es lo que se guarda y cómo se protege.
+**Proyectos y repositorios:** cada tarjeta resume el proyecto y su tecnología, y **Ver demo**
+abre la aplicación en vivo. Los filtros muestran solo QA y pruebas, Operación TI, Datos y
+automatización o Aplicaciones web.
 
-### Qué datos se guardan y dónde
+![Proyectos y repositorios](img/manual/10-consultar.png)
 
-| Dato | Dónde queda |
+**Servicios** y **Habilidades** describen lo que hago y las herramientas que uso:
+
+| Servicios | Habilidades |
+|:-:|:-:|
+| ![Servicios](img/manual/11-consultar-servicios.png) | ![Habilidades](img/manual/12-consultar-habilidades.png) |
+
+### 8.3 Modificar
+
+No aplica: el sitio solo muestra información.
+
+### 8.4 Reportar
+
+No aplica. Cada proyecto tiene su propio monitoreo de disponibilidad y sus pruebas automatizadas,
+enlazados desde su README.
+
+## 9. Gestión de perfil
+
+No aplica: el sitio no tiene cuentas. El tema claro u oscuro se recuerda en tu navegador.
+
+## 10. Mensajes frecuentes
+
+| Mensaje | Qué significa | Qué hacer |
+|---|---|---|
+| Esta dirección no responde | La dirección no existe | Usa **Ir al inicio** |
+| Sin conexión | Tu equipo no tiene internet | La pantalla reintenta sola |
+
+| Página no encontrada | Sin conexión |
+|:-:|:-:|
+| ![Página no encontrada](img/manual/16-no-encontrada.png) | ![Pantalla sin conexión](img/manual/17-sin-conexion.png) |
+
+## 11. Preguntas frecuentes
+
+**¿Por qué una demo tarda en abrir?** Varios proyectos se suspenden cuando nadie los usa y tardan
+un momento en despertar.
+
+**¿El formulario guarda mis datos?** No: solo arma el mensaje y abre WhatsApp.
+
+**¿Se puede instalar como aplicación?** Sí: en Chrome o Edge, **Instalar aplicación**; en iPhone,
+Safari → **Compartir → Agregar a inicio**.
+
+**¿Cómo te contacto?** Telegram [@lfac6](https://t.me/lfac6), WhatsApp
+[@carraian160](https://wa.me/carraian160) o [ariascluisf@hotmail.com](mailto:ariascluisf@hotmail.com).
+
+## 12. Glosario
+
+| Término | Qué significa |
 |---|---|
-| Nombre, contacto y mensaje del formulario | **En ningún servidor.** El sitio arma el mensaje y abre WhatsApp; el envío lo haces tú desde WhatsApp y el sitio no lo guarda ni lo transmite |
-| Preferencia de tema | `localStorage` de tu navegador |
-
-### Cómo se protege tu información
-
-Comprobado en el código (`JS/formulario.js`, `JS/tema.js`):
-
-- **Sin recolección de datos:** no hay backend, base de datos, cookies de seguimiento ni servicios
-  de terceros para el formulario.
-- **Tú controlas el envío:** el mensaje sale desde tu propio WhatsApp y puedes revisarlo antes de
-  enviarlo.
-- **HTTPS** provisto por GitHub Pages.
-
-## 6. Agradecimientos
-
-A mi familia, por su apoyo incondicional, su paciencia y por creer en cada proyecto incluso cuando apenas era una idea. Este trabajo también es de ustedes.
-
-Y a ti, que usas esta plataforma: cada prueba, comentario y sugerencia ayuda a que siga mejorando.
+| **Demo** | La aplicación funcionando en internet, para probarla |
+| **QA** | Aseguramiento de calidad: probar que el software funciona como debe |
+| **Repositorio** | Donde se guarda el código de un proyecto |
+| **Soporte TI** | Atención de incidentes y mantenimiento de los sistemas |
